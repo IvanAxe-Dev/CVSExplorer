@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSVExplorer.Core\CSVExplorer.Core.csproj" />
+    <ProjectReference Include="..\CSVExplorer.Infrastructure\CSVExplorer.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
