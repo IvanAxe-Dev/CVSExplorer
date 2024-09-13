@@ -12,8 +12,6 @@ namespace CSVExplorer.Core.Domain.Entities
     [Table("Users")]
     public class User : BaseEntity
     {
-        [Required(ErrorMessage = "Name is required")]
-        [StringLength(100, ErrorMessage = "Name can't be longer than 100 characters")]
         [Column("name")]
         public string Name { get; set; }
 
@@ -23,12 +21,9 @@ namespace CSVExplorer.Core.Domain.Entities
         [Column("is_married")] 
         public bool Married { get; set; } = false;
 
-        [Phone(ErrorMessage = "Invalid phone number format")]
-        [StringLength(15, ErrorMessage = "Phone number can't be longer than 15 characters")]
         [Column("phone_number")]
         public string PhoneNumber { get; set; }
 
-        [Range(0, double.MaxValue, ErrorMessage = "Salary must be a positive number")]
         [Column("current_salary")]
         public decimal Salary { get; set; }
     }

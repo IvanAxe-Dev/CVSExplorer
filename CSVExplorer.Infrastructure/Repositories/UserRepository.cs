@@ -14,9 +14,12 @@ namespace CSVExplorer.Infrastructure.Repositories
         {
         }
 
-        protected override IQueryable<User> PrepareDbSet()
+        public async Task PostManyAsync(ICollection<User> users)
         {
-            return base.PrepareDbSet();
+            if (!users.Any())
+                throw new ArgumentException("The user list cannot be empty.", nameof(users));
+
+            await dbSet.AddRangeAsync(users);
         }
     }
 }
